@@ -26,17 +26,17 @@ public class UserRepository {
     public List<User> findAll(){
         System.out.println("Listing system users");
         List<User> users = new ArrayList<>();
-        users.add(new User("edson" , "123456"));
+        users.add(new User( "edson" , "123456"));
         users.add(new User("robson" , "123456"));
         return users;
     }
 
     public User findById(Integer id){
-        return new User("edson" , "123456");
+        return new User( "edson" , "123456");
     }
 
     public User findByUserName(String userName){
         System.out.println(String.format("Find -User Name %s" , userName));
-        return new User(userName , "123456");
+        return new User(  userName , "123456");
     }
 }

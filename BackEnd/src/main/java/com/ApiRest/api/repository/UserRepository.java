@@ -1,5 +1,6 @@
 package com.ApiRest.api.repository;
 
+import com.ApiRest.api.handler.BusinessException;
 import com.ApiRest.api.model.User;
 import org.springframework.stereotype.Repository;
 
@@ -10,6 +11,10 @@ import java.util.List;
 public class UserRepository {
 
     public void saveUser(User user){
+        if(user.getLogin() == null){
+            throw new BusinessException("O campo login é Obrigatório.");
+        }
+
         if(user.getId() == null){
             System.out.println("Save - repository layer user ");
         } else {
